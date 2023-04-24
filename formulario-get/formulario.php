@@ -1,12 +1,3 @@
-<?php
-
-echo "El usuario {$_GET["nombre"]} tiene {$_GET["edad"]} años";
-echo "<pre>";
-var_dump($_FILES);
-echo "</pre>";
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
