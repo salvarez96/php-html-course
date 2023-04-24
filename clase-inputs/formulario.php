@@ -30,10 +30,24 @@
     <input type="number" name="persona[edad]" id="edad" /> -->
 
     <!-- Checkbox -->
-    <input type="checkbox" name="list1" value="value1" />
+    <!-- <input type="checkbox" name="list1" value="value1" />
     <input type="checkbox" name="list2" value="value2" />
-    <input type="checkbox" name="list3" value="value3" />
+    <input type="checkbox" name="list3" value="value3" /> -->
 
+    <!-- Radio -->
+    <!-- <label for="mexico">Escoge tu país de origen: </label>
+    <label for="mexico">México </label>
+    <input type="radio" name="list" value="mexico" id="mexico" />
+
+    <label for="colombia">Colombia </label>
+    <input type="radio" name="list" value="colombia" id="colombia" />
+
+    <label for="argentina">Argentina: </label>
+    <input type="radio" name="list" value="argentina" id="argentina" /> -->
+
+    <!-- Múltiples archivos -->
+    <label for="galeria">Carga tus imágenes: </label>
+    <input type="file" multiple name="galeria[]" id="galeria" enctype="multipart/form-data" />
 
     <button type="submit">Enviar formulario</button>
   </form>
