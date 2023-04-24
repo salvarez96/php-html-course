@@ -1,6 +1,9 @@
 <?php
 
 echo "El usuario {$_GET["nombre"]} tiene {$_GET["edad"]} años";
+echo "<pre>";
+var_dump($_FILES);
+echo "</pre>";
 
 ?>
 
@@ -15,12 +18,15 @@ echo "El usuario {$_GET["nombre"]} tiene {$_GET["edad"]} años";
 </head>
 
 <body>
-  <form action="./server.php" method="get">
+  <form action="./server.php" method="post" enctype="multipart/form-data">
     <label for="nombre">Ingresa tu nombre</label>
     <input type="text" name="nombre" id="nombre" />
 
     <label for="edad">Ingresa tu edad</label>
     <input type="text" name="edad" id="edad" />
+
+    <label for="imagen">Agrega la imagen que quieras</label>
+    <input type="file" name="imagen" id="imagen">
 
     <button type="submit">Enviar formulario</button>
   </form>
