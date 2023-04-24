@@ -45,7 +45,9 @@ echo "</pre>";
 <body>
   <?php if ($status === "success"): ?>
     <div class="alert success">
-      <span>Mensaje enviado con éxito!</span>
+      <span>Mensaje enviado con éxito
+        <?= $name ?>!
+      </span>
     </div>
   <?php else: ?>
     <div class="alert danger">
