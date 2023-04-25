@@ -10,12 +10,20 @@ $status = "";
 $name = "";
 if (isset($_POST['form'])) {
   if (validateInfo(...$_POST)) {
-    $name = strip_tags(strtolower($_POST['name']));
-    $email = strip_tags($_POST['email']);
     $subject = strip_tags($_POST['subject']);
     $message = strip_tags($_POST['message']);
 
+    $name = strip_tags(strtolower($_POST['name']));
+    $name = preg_replace("/[^a-z ]/", "", $name);
+    $name = ucwords($name);
+
+    $email = strip_tags($_POST['email']);
+    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+
+    $body = "<strong>$name</strong> <'$email'> te envía el siguiente mensaje: <br/><br/> $message";
+
     // Enviar el correo
+    sendMail($subject, $body, $email, $name, true);
     $status = "success";
 
   } else {
