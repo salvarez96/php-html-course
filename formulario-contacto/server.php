@@ -1,5 +1,6 @@
 <?php
 
+require("mail.php");
 function validateInfo($name, $email, $subject, $message, $form)
 {
   return !empty($name) && !empty($email) && !empty($subject) && !empty($message);
@@ -9,13 +10,10 @@ $status = "";
 $name = "";
 if (isset($_POST['form'])) {
   if (validateInfo(...$_POST)) {
-    $name = strip_tags($_POST['name']);
+    $name = strip_tags(strtolower($_POST['name']));
     $email = strip_tags($_POST['email']);
     $subject = strip_tags($_POST['subject']);
     $message = strip_tags($_POST['message']);
-
-    $name = preg_replace("/[^a-z ]/", "", $name);
-    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
 
     // Enviar el correo
     $status = "success";
@@ -24,10 +22,6 @@ if (isset($_POST['form'])) {
     $status = "danger";
   }
 }
-
-echo "<pre>";
-var_dump($_POST);
-echo "</pre>";
 
 ?>
 
